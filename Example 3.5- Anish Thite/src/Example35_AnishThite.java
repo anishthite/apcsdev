@@ -35,25 +35,7 @@ public class Example35_AnishThite {
 //		System.out.println("Enter the regular hours worked on Monday: ");
 //		regularHours += reader.nextDouble();
 //		System.out.println("Enter the overtime hours worked on Monday: ");
-//		overtimeHours += reader.nextDouble();
-//		System.out.println("Enter the regular hours worked on Tuesday: ");
-//		regularHours += reader.nextDouble();
-//		System.out.println("Enter the overtime hours worked on Tuesday: ");
-//		overtimeHours += reader.nextDouble();
-//		System.out.println("Enter the regular hours worked on Wednesday: ");
-//		regularHours += reader.nextDouble();
-//		System.out.println("Enter the overtime hours worked on Wednesday: ");
-//		overtimeHours += reader.nextDouble();
-//		System.out.println("Enter the regular hours worked on Thursday: ");
-//		regularHours += reader.nextDouble();
-//		System.out.println("Enter the overtime hours worked on Thursday: ");
-//		overtimeHours += reader.nextDouble();
-//		System.out.println("Enter the regular hours worked on Friday: ");
-//		regularHours += reader.nextDouble();
-//		System.out.println("Enter the overtime hours worked on Friday: ");
-//		overtimeHours += reader.nextDouble();
-//		
-//		
+//		overtimeHours += reader.nextDouble()
 		
 		// calculate weekly pay and print result
 		System.out.println("The total weekly pay is: $"+ hourlyWage*regularHours + (overtimeHours * 1.5 * hourlyWage));
@@ -61,10 +43,13 @@ public class Example35_AnishThite {
 	}
 	
 	
-	public static void hours_input(String day)
-	{
+	public static void hours_input(String day) {
+		
+		//Prompt user for reular hours and add it to total
 		System.out.println("Please enter the regular hours worked on " + day);
 		regularHours += reader.nextDouble();
+		
+		//Prompt user for reular hours and add it to total
 		System.out.println("Enter the overtime hours worked  on " + day);
 		overtimeHours += reader.nextDouble();
 	}
