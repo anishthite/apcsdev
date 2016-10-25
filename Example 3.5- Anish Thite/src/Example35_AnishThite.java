@@ -8,8 +8,10 @@
  */
 // import Scanner class
 import java.util.Scanner;
+
 public class Example35_AnishThite {
 	
+	//set variables used
 	public static double hourlyWage, regularHours = 0, overtimeHours = 0, weeklyPay;
 	public static Scanner reader = new Scanner(System.in);
 	public static String name;  
@@ -17,8 +19,6 @@ public class Example35_AnishThite {
 
 	public static void main(String[] args) {
 		
-		// instantiate variables and reader object
-		String name;  
 		//Assign user inputs to various prompts
 		System.out.println("Enter your name: ");
 		name = reader.nextLine();
@@ -26,7 +26,7 @@ public class Example35_AnishThite {
 		hourlyWage= reader.nextDouble();
 		
 		
-		
+		//run method to add data from each day
 		hours_input("Monday");
 		hours_input("Thursday");
 		hours_input("Friday");
@@ -55,11 +55,8 @@ public class Example35_AnishThite {
 //		
 //		
 		
-		//calculate the weekly pay
-		weeklyPay = hourlyWage*regularHours + (overtimeHours * 1.5 * hourlyWage);
-		
-		//print result
-		System.out.println("The total weekly pay is: $"+ weeklyPay);
+		// calculate weekly pay and print result
+		System.out.println("The total weekly pay is: $"+ hourlyWage*regularHours + (overtimeHours * 1.5 * hourlyWage));
 		
 	}
 	
