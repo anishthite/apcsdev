@@ -1,0 +1,45 @@
+import static java.lang.Math.*;
+import static java.lang.String.*;
+public class ProblemSet75 {
+	public static void main(String[] args) {
+		
+		/* Begin Math Methods*/
+		double absOutput, ceilOutput, floorOutput;
+		int b = 5, c = 10, maxValue, minValue ;
+		
+		System.out.print(Math.abs(5.3));
+		
+		ceilOutput = Math.ceil(5.4); 
+		
+		floorOutput = Math.floor(6.2); 
+		
+		maxValue = Math.max(5,10); 
+		
+		minValue = Math.min(3,4);
+		/* Begin String Methods*/
+		
+		double lengthOutput;
+		int indexOf;
+		boolean isemptyOutput;
+		String example = "example";
+		
+		example.indexOf( "A" ); 
+		 
+		lengthOutput = example.length(); 
+		 
+		isemptyOutput = example.isEmpty();
+		 
+		"Anish".substring(0,3);
+		 
+		"Hello".replace("o", "p");
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

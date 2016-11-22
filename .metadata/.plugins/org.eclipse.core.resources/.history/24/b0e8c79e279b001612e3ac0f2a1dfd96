@@ -1,0 +1,43 @@
+import static java.lang.Math.*;
+import static java.lang.String.*;
+public class ProblemSet75 {
+	public static void main(String[] args) {
+		
+		/* Begin Math Methods*/
+		
+		System.out.println(Math.abs(-5.3));
+		
+		System.out.println(Math.ceil(5.4)); 
+		
+		System.out.println(Math.floor(6.2)); 
+		
+		System.out.println(Math.max(5,10)); 
+		
+		System.out.println(Math.min(3,4));
+		
+		/* Begin String Methods*/
+		
+		double lengthOutput;
+		int indexOf;
+		boolean isemptyOutput;
+		
+		System.out.println("example".indexOf( "a" )); 
+		 
+		System.out.println("example".length()); 
+		 
+		System.out.println("example".isEmpty());
+		 
+		System.out.println("Anish".substring(0,3));
+		 
+		System.out.println("zoo".replace("z", "b"));
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}

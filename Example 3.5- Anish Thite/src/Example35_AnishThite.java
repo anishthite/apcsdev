@@ -1,58 +1,63 @@
 /*
  Anish Thite
- 10/18/2016
+ 11/12/2016
  Notre Dame High School
  Project- 3-5 Total Weekly Pay calculator
- Decsription- This project calculates the total weekly pay on an employee from the overtime hours they worked, 
+ Description- This project calculates the total weekly pay on an employee from the overtime hours they worked, 
  	the regular hours they worked, and the weekly pay
  */
-// import Scanner class
+// import necessary classes
 import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Example35_AnishThite {
 	
-	//set variables used
+	//set variables and objects used
 	public static double hourlyWage, regularHours = 0, overtimeHours = 0, weeklyPay;
-	public static Scanner reader = new Scanner(System.in);
-	public static String name;  
+	public static Scanner input = new Scanner(System.in);
+	public static String line, name;  
+	private static FileInputStream inFile;
+	private static InputStreamReader inReader;
+	private static BufferedReader reader;
+	private static StringTokenizer strTkn; 
 	
-
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		//Assign user inputs to various prompts
-		System.out.println("Enter your name: ");
-		name = reader.nextLine();
-		System.out.println("Enter the hourly wage: ");
-		hourlyWage= reader.nextDouble();
-		
-		
-		//run method to add data from each day
-		hours_input("Monday");
-		hours_input("Thursday");
-		hours_input("Friday");
-		hours_input("Saturday");
-	
-//		System.out.println("Enter the regular hours worked on Monday: ");
-//		regularHours += reader.nextDouble();
-//		System.out.println("Enter the overtime hours worked on Monday: ");
-//		overtimeHours += reader.nextDouble()
-		
+		init_file();
+		getData();
+		// tallies the hours 5 times ( representing the days worked)
+		for (int count = 1; count < 6; count ++) {
+			hours_input();
+		}
 		// calculate weekly pay and print result
-		System.out.println("The total weekly pay is: $"+ hourlyWage*regularHours + (overtimeHours * 1.5 * hourlyWage));
+		calculate_pay(hourlyWage,regularHours,overtimeHours);
+		print(name, weeklyPay);
 		
 	}
-	
-	
-	public static void hours_input(String day) {
-		
-		//Prompt user for reular hours and add it to total
-		System.out.println("Please enter the regular hours worked on " + day);
-		regularHours += reader.nextDouble();
-		
-		//Prompt user for reular hours and add it to total
-		System.out.println("Enter the overtime hours worked  on " + day);
-		overtimeHours += reader.nextDouble();
+	public static void init_file() throws IOException{
+		inFile = new FileInputStream ("c:\\APCS.dev\\APCSData\\test.txt"); 
+		inReader = new InputStreamReader(inFile);
+		reader = new BufferedReader(inReader);
+		line = reader.readLine();
+		strTkn = new StringTokenizer(line);
+	}
+	public static void getData() throws IOException{
+		name = strTkn.nextToken() + " " + strTkn.nextToken();
+		hourlyWage = Double.parseDouble(strTkn.nextToken());
+	}
+	public static void hours_input() {
+		//Prompt user for regular hours and add it to total
+		regularHours += Double.parseDouble(strTkn.nextToken());
+		//Prompt user for overtime hours and add it to total
+		overtimeHours += Double.parseDouble(strTkn.nextToken());
+	}
+	public static void calculate_pay( double hourlyWage,double regularHours, double overtimeHours){
+		weeklyPay = hourlyWage*regularHours + (overtimeHours * 1.5 * hourlyWage);
 	}
 
-
+	public static void print(String name, double weeklyPay){
+		System.out.println("The total weekly pay for " + name +" is: $" + weeklyPay );
+	}
 }

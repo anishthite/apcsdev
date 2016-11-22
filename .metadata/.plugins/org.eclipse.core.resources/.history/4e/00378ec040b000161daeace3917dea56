@@ -1,0 +1,58 @@
+/*
+ Anish Thite
+ 11/20/2016
+ Notre Dame High School
+ Project- 7-1 Guessing Game (Human guess)
+ Description- This project replicates a guessing game; the computer picks a 
+ random number from between 1 and 100, and the user has to guess the number 
+ */
+import java.util.*;
+public class AnishThite72 {
+	public static int correctNumber, boundLow, boundHigh, guess, count = 1;
+	public static Scanner reader = new Scanner(System.in);
+	public static String check;
+	public static Random generator = new Random();
+	public static void main(String[] args) {
+		// user defines the correct answer and range
+		user_input();
+		// computer defines guess
+		guess();
+		check();
+	}
+
+	public static void user_input(){
+		boundHigh = 101;
+		boundLow = 1;
+		System.out.println("Enter the number you are thinking of ");
+		correctNumber = reader.nextInt();
+	}
+	public static void guess(){
+		guess = generator.nextInt(boundHigh) + boundLow;
+		System.out.println("My guess is " + guess);
+		count ++;
+	}
+	public static void check(){
+	reader.nextLine();
+	System.out.println("is this correct, too high, or too low?");
+	check = reader.nextLine().trim().toLowerCase();
+	if (check == "correct" || check == "too high" || check == "too low")
+		while (true) {
+			if (check.toLowerCase() == "correct"){
+				System.out.print("That was fun! ");
+				break; 
+			}
+			if (check.toLowerCase() == "too high"){
+				guess();
+			}
+			if (check.toLowerCase() == "too low"){ 
+				guess();
+			}
+	else{
+		System.out.println("Sorry, I do not recognize that statement!");
+	}
+	
+	}
+	
+	}
+	
+}

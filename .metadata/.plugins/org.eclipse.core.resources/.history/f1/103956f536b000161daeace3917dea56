@@ -1,0 +1,36 @@
+/*
+ Anish Thite
+ 11/20/2016
+ Notre Dame High School
+ Project- 7-1 Guessing Game (Human guess)
+ Description- This project replicates a guessing game; the computer picks a 
+ random number from between 1 and 100, and the user has to guess the number 
+ */
+import java.util.*;
+public class AnishThite72 {
+	public static int correctNumber, boundLow, boundHigh, guess, count = 1;
+	public static Scanner reader;
+	public static Random generator;
+	public static void main(String[] args) {
+		// user defines the correct answer and range
+		// computer defines guess
+		// user inputs if guess was correct or not, computer counts it or breaks while loop
+
+	}
+
+	public static void user_input(){
+		reader = new Scanner(System.in);
+		boundHigh = 100; 
+		System.out.println("Enter the number you are thinking of ");
+		correctNumber = reader.nextInt();
+	}
+	public static void guess(){
+		generator = new Random();
+		guess = generator.nextInt(boundHigh);
+		System.out.println("My guess is " + guess);
+	}
+	public static void check(){
+		
+	} 
+	
+}

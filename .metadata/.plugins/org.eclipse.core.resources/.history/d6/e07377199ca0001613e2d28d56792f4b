@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class sandpit {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String str = new String();
+		str = "";
+		for (int count = 10; count == 0; count --)
+			str += count;
+		System.out.println(str);
+
+	}
+
+}

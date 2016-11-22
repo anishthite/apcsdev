@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class sandpit {
+
+	Character x;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double a= 23.6;
+		int b;
+		b = (int)a;
+		System.out.println(b);
+	}
+
+}

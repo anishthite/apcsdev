@@ -1,0 +1,28 @@
+import static java.lang.Math.*;
+import static java.lang.String.*;
+public class ProblemSet75 {
+	public static void main(String[] args) {
+		double absInput = 4.5, ceilInput = 5.4, floorInput = 6.2
+		int b = 5, c = 10, maxValue, minValue ;
+		
+		absInput = Math.abs(absInput);
+		
+		ceilInput = Math.ceil(ceilInput); 
+		
+		floorInput = Math.floor(floorInput); 
+		
+		maxValue = Math.max(b,c); 
+		
+		minValue = Math.min(b,c);
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}
+
+}
