@@ -2,9 +2,8 @@
  Anish Thite
  11/20/2016
  Notre Dame High School
- Project- 7-1 Guessing Game (Human guess)
- Description- This project replicates a guessing game; the computer picks a 
- random number from between 1 and 100, and the user has to guess the number 
+ Project- 7-1 Guessing Game (Computer guess)
+ Description- This project replicates a guessing game; the human picks a number from between 1 and 100, and the computer has to guess the number 
  */
 import java.util.*;
 public class AnishThite72 {
@@ -13,6 +12,7 @@ public class AnishThite72 {
 	public static String check;
 	public static boolean correct = false;
 	public static Random generator = new Random();
+	
 	public static void main(String[] args) {
 		// user defines the correct answer and range
 		user_input();

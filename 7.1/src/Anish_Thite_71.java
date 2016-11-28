@@ -14,6 +14,7 @@ public class Anish_Thite_71 {
 	public static Scanner reader;
 	public static Random generator;
 	public static boolean correctAnswer = false;
+	
 	public static void main(String[] args) {
 		// generate number between 1 and 100
 		// print out prompt
@@ -32,8 +33,7 @@ public class Anish_Thite_71 {
 		correctNumber = generator.nextInt(101);
 		System.out.println("I am thinking of a number between 1 and 100. Take a guess!");
 	}
-	
-	public static void user_guess() throws InputMismatchException{
+	public static void user_guess(){
 		reader = new Scanner(System.in);
 		guess = reader.nextInt();
 		count ++;
