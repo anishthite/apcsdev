@@ -1,4 +1,11 @@
-/*LuckySevens.java
+/*
+ Anish Thite
+ 11/29/2016
+ Notre Dame High School
+ Project- 7-6 Lucky Sevens Reloaded
+ Description- This project edits the LuckySevens game as described in project 7.6
+
+LuckySevens.java
 Simulate the game of lucky sevens until all funds are depleted.
 1) Rules:
         roll two dice
@@ -24,47 +31,40 @@ public class LuckySevens {
       Scanner reader = new Scanner(System.in);
       Random generator = new Random();
    
-      int die1, die2,       // two dice
-          dollars,          // initial number of dollars (input)
-          count,            // number of rolls to reach depletion
-          maxDollars,       // maximum amount held by the gambler
-          countAtMax;       // count when the maximum is achieved
+      int die1, die2;       // two dice
+      int dollars;          // initial number of dollars (input)
+      int roll_count = 0;	// number of rolls to reach depletion
+      int total_roll_count = 0;            // total number of rolls
 
       // Request the input
       System.out.print("How many dollars do you have? ");
-      dollars = reader.nextInt();
-   
-      // Initialize variables
-      maxDollars = dollars;
-      countAtMax = 0;
-      count = 0;
-   
-      // Loop until the money is gone   
-      while (dollars > 0){
-         count++;
-     
+      int originalDollars = reader.nextInt();
+      // Loop the simulation 100 times   
+      for (int sim_count = 1; sim_count <= 100; sim_count ++){
+    		dollars = originalDollars;
+    		roll_count = 0;
+    	// run gambling simulation if there is money left
+    	  while (dollars > 0)
+    		  {
+    			  roll_count++;
          // Roll the dice.
-         die1 = generator.nextInt (6) + 1; // 1-6 
-         die2 = generator.nextInt (6) + 1; // 1-6
-     
+    			  die1 = generator.nextInt (6) + 1; // 1-6 
+    			  die2 = generator.nextInt (6) + 1; // 1-6
+		  
          // Calculate the winnings or losses
          if (die1 + die2 == 7)
-            dollars += 4;
+            {dollars += 4;}
          else 
-            dollars -= 1; 
-
-      
-         // If this is a new maximum, remember it  
-         if (dollars > maxDollars){
-            maxDollars = dollars;
-            countAtMax = count;
+            {dollars -= 1;}
+          
          }
+    	  //tally roll count
+    	  total_roll_count += roll_count;
       }
-   
-      // Display the results
+            // Display the results
       System.out.println 
-         ("You are broke after " + count + " rolls.\n" +
-          "You should have quit after " + countAtMax +
-          " rolls when you had $" + maxDollars + ".");
-   }
+         ("You run out of money after an average of " + total_roll_count/100 + " rolls.");
+     
+    }     
 }
+   
