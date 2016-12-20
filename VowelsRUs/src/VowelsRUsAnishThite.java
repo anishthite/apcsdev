@@ -15,7 +15,7 @@ public class VowelsRUsAnishThite {
 	private static InputStreamReader inReader;
 	private static BufferedReader reader;
 	private StringTokenizer strTkn;
-	private static String line, ending, plural, suffixStart;
+	private static String line, ending, plural, suffixStart, suffix;
 	
 	private static boolean vowel, doubleVowel, consonant, doubleConsonant;
 	
@@ -37,6 +37,7 @@ public class VowelsRUsAnishThite {
 	//change to suffix based on result
 	change_suffix();
 	//print results (Orig String, plural, and suffix)
+	print_output();
 	}
 	//import files
 	public static void init_File() throws IOException {
@@ -156,6 +157,11 @@ public class VowelsRUsAnishThite {
 		if ((consonant == true) && (doubleConsonant == true)){
 			
 		}
-		return plural;
+		return suffix;
+	}
+	public static void print_output(){
+		System.out.println();
+		System.out.println();
+		System.out.println();
 	}
 }
