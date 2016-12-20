@@ -22,11 +22,20 @@ public class VowelsRUsAnishThite {
 	public static void main(String[] args) {
 	//Steps:
 	//import text
+	init_File();
 	//get data 
 	//split to second word
+	get_ending();
 	// check if last letter is vowel (compare to A,C,S,L)
+	check_vowel();
+	check_doubleVowel();
+	check_consonant();
+	check_doubleCOnsonant();
+	check_suffixStart();
 	// change to plural based on result
+	change_plural();
 	//change to suffix based on result
+	change_suffix();
 	//print results (Orig String, plural, and suffix)
 	}
 	//import files
