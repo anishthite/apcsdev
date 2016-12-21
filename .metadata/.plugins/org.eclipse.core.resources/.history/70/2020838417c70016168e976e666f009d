@@ -1,0 +1,220 @@
+/*
+ Anish Thite
+ 12/10/2016
+ Notre Dame High School
+ Project- VowelsRUs 
+ Description- 
+  */
+//import necessary classes
+import java.util.*;
+import java.io.*;
+
+public class VowelsRUsAnishThite {
+	//variables for input/reading file
+	private static FileInputStream inFile;
+	private static InputStreamReader inReader;
+	private static BufferedReader reader;
+	private StringTokenizer strTkn;
+	private static String root, line, ending, plural, suffixStart, suffix, part1;
+	
+	private static boolean vowel, doubleVowel, consonant, doubleConsonant;
+	
+	public static void main(String[] args) throws IOException {
+	//Steps:
+	//import text
+	init_File();
+	//get data 
+	//split to second word
+	get_ending();
+	// check if last letter is vowel (compare to A,C,S,L)
+	check_vowel();
+	check_doubleVowel();
+	check_consonant();
+	check_doubleConsonant();
+	check_suffixStart();
+	// change to plural based on result
+	change_plural();
+	//change to suffix based on result
+	change_suffix();
+	//print results (Orig String, plural, and suffix)
+	print_output();
+	}
+	//import files
+	public static void init_File() throws IOException {
+		inFile = new FileInputStream("c:\\APCS.dev\\APCSData\\test.txt");
+		inReader = new InputStreamReader(inFile);
+		reader = new BufferedReader(inReader);
+
+	}
+	// read the ending part of the word ( after " ")
+	public static void get_ending() throws IOException{
+		line = reader.readLine();
+		String[] parts =  line.split(" ");
+		ending = parts[1];
+		root = parts[0];
+	}
+	// checks ending to see if it is a vowel
+	public static boolean check_vowel(){
+		String strtemp = root.substring(root.length()-1);
+				if (strtemp.equals("A") || 
+						strtemp.equals("C") || 
+								strtemp.equals("S") || 
+										strtemp.equals("L")  )
+				{
+				vowel = true;
+				}
+				else{
+				vowel = false;
+				}
+			return vowel;
+	}
+	//checks to see for a double value
+	public static boolean check_doubleVowel(){
+		if ((root.substring(root.length()-2) == "A" || 
+			root.substring(root.length()-2) == "C" || 
+			root.substring(root.length()-2) == "S" || 
+			root.substring(root.length()-2) == "L" ) && (vowel == true))
+		{
+		doubleVowel = true;
+		}
+		else{
+		doubleVowel = false;
+		}
+	return doubleVowel;
+	}
+	public static boolean check_consonant(){
+		if (root.substring(root.length()-1) != "A" && 
+			root.substring(root.length()-1) != "C" && 
+			root.substring(root.length()-1) != "S" && 
+			root.substring(root.length()-1) != "L"  )
+		{
+		consonant = true;
+		}
+		else{
+		consonant = false;
+		}
+	return consonant;
+	}	
+	public static boolean check_doubleConsonant(){
+		if ((root.substring(ending.length()-2) != "A"&& 
+			root.substring(ending.length()-2) != "C" && 
+			root.substring(ending.length()-2) != "S" && 
+			root.substring(ending.length()-2) != "L" ) && (consonant == true))
+		{
+		doubleConsonant = true;
+		}
+		else{
+		doubleConsonant = false;
+		}
+	return doubleConsonant;
+	}
+	public static String check_suffixStart(){
+		if (ending.substring(0) == "A"|| 
+			ending.substring(0) == "C" || 
+			ending.substring(0) == "S" || 
+			ending.substring(0) == "L")
+		{
+		suffixStart = "vowel";
+		}
+		else{
+		suffixStart = "consonant";
+		}
+	return suffixStart;
+	}
+	//changes word to plural
+	public static String change_plural(){
+		//change based on vowel
+		if ((vowel == true) && (doubleVowel != true)){
+			plural = root.substring(0, root.length()-2) + "G";
+		}
+		//change based on double vowel
+		if ((vowel == true) && (doubleVowel == true)){
+			plural = root + root.substring(root.length()-1) + "H";
+		}	
+		//change based on consonant
+		if ((consonant == true) && (doubleConsonant != true)){
+			plural = root + "GH";
+		}
+		//change based on double consonant
+		if ((consonant == true) && (doubleConsonant == true)){
+			plural = root + root.substring(root.length()-1) + "H";
+		}
+		return plural;
+	}
+	public static String change_suffix(){
+		//change based on vowel
+		if ((vowel == true) && (doubleVowel != true)){
+			if (suffixStart == "vowel" ){
+				suffix = root + ending.substring(1);
+			}
+			else{
+				suffix = root + ending.substring(0, 1) + ending;
+			}
+		}
+		//change based on double vowel
+		if ((vowel == true) && (doubleVowel == true)){
+			if (suffixStart == "vowel" ){
+				suffix = root + ending.substring(0, 1) + ending;
+			}
+			else{
+				int leftmostvowel = leftmost_vowel();
+				suffix = root.substring(0, leftmostvowel) + root.substring((leftmostvowel + 1)) + ending;
+			}
+		}
+		//change based on consonant
+		if ((consonant == true) && (doubleConsonant != true)){
+			suffix = root + ending;
+		}
+		//change based on double consonant
+		if ((consonant == true) && (doubleConsonant == true)){
+			if (suffixStart == "vowel" ){
+				suffix = root + ending.substring(0, 1) + ending;
+			}
+			else{
+				int leftmostconstant = leftmost_constant();
+				suffix = root.substring(0, leftmostconstant) + root.substring((leftmostconstant + 1)) + ending;
+			}
+		}
+		return suffix;
+	}
+	public static int leftmost_vowel(){
+		int leftVowelIndex = -1;
+		for (int i = root.length()-1; i >=0; i-- ){
+			if (root.charAt(i) == 'A' || 
+				root.charAt(i) == 'C' || 
+				root.charAt(i) == 'S' || 
+				root.charAt(i) == 'L'  )
+				{
+					leftVowelIndex = i;
+				
+				}
+				else{
+				break;
+				}
+		}
+		return leftVowelIndex;
+	}
+	public static int leftmost_constant(){
+		int leftConstantIndex = -1;
+		for (int i = root.length()-1; i >=0; i-- ){
+			if (root.charAt(i) != 'A' && 
+				root.charAt(i) != 'C' && 
+				root.charAt(i) != 'S' && 
+				root.charAt(i) != 'L'  )
+				{
+					leftConstantIndex = i;
+				
+				}
+				else{
+				break;
+				}
+		}
+		return leftConstantIndex;
+	}
+	
+	public static void print_output(){
+		System.out.println();
+		System.out.println();
+		System.out.println();
+	}
+}
