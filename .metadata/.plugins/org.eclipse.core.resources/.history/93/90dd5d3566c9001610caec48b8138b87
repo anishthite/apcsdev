@@ -64,7 +64,7 @@ public class VowelsRUsAnishThite {
 		ending = parts[1];
 		root = parts[0];
 	}
-	// checks ending of root to see if it is a vowel- returns vowel(true of false)
+	// checks ending of root to see if it is a vowel
 	public static boolean check_vowel(){
 				if (root.substring(root.length()-1).equalsIgnoreCase("A") || 
 					root.substring(root.length()-1).equalsIgnoreCase("C") || 
@@ -78,7 +78,7 @@ public class VowelsRUsAnishThite {
 				}
 			return vowel;
 	}
-	//checks to see for a double vowel at the ending of the root- returns doubleVowel (true or false)
+	//checks to see for a double vowel at the ending of the root
 	public static boolean check_doubleVowel(){
 		if ((root.substring(root.length()-2,root.length()-1).equalsIgnoreCase("A") || 
 			root.substring(root.length()-2,root.length()-1).equalsIgnoreCase("C") || 
@@ -92,7 +92,7 @@ public class VowelsRUsAnishThite {
 		}
 	return doubleVowel;
 	}
-	//checks to see if last letter is consonant- returns consonant (true or false)
+	//checks to see if last letter is consonant
 	public static boolean check_consonant(){
 		if (!root.substring(root.length()-1).equalsIgnoreCase("A") && 
 			!root.substring(root.length()-1).equalsIgnoreCase("C") && 
@@ -106,7 +106,7 @@ public class VowelsRUsAnishThite {
 		}
 	return consonant;
 	}	
-	//checks to see if the word ends with a double consonant- returns doubleConsonant (true or false)
+	//checks to see if the word ends with a double consonant
 	public static boolean check_doubleConsonant(){
 		if ((!root.substring(root.length()-2,root.length()-1).equalsIgnoreCase("A")&& 
 			!root.substring(root.length()-2,root.length()-1).equalsIgnoreCase("C") && 
@@ -120,7 +120,7 @@ public class VowelsRUsAnishThite {
 		}
 	return doubleConsonant;
 	}
-	//checks to see if the first letter of the suffix is a vowel or consonant- returns suffixStart (true or false)
+	//checks to see if the first letter of the suffix is a vowel or consonant
 	public static String check_suffixStart(){
 		if (ending.substring(0,1).equalsIgnoreCase("A")|| 
 			ending.substring(0,1).equalsIgnoreCase("C") || 
@@ -134,7 +134,7 @@ public class VowelsRUsAnishThite {
 		}
 	return suffixStart;
 	}
-	//changes word to plural based on results from check_vowel(),check_doubleVowel(), check_consonant(), and check_doubleConsonant()
+	//changes word to plural
 	public static String change_plural(){
 		String plural = " ";
 		//change based on vowel
@@ -156,7 +156,6 @@ public class VowelsRUsAnishThite {
 		System.out.println("The plural is " + plural);
 		return plural;
 	}
-	// Creates suffix based on results from check_suffixStart(), check_vowel(),check_doubleVowel(), check_consonant(), and check_doubleConsonant(), leftmost_vowel(), and leftmost_consonant()
 	public static String change_suffix(){
 		String suffix = " ";
 		//change based on vowel
