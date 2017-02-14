@@ -1,0 +1,22 @@
+import java.util.*;
+import java.lang.Math;
+import java.util.Random;
+public class sandpit {
+   public static String mystr;
+  	
+	public static void main(String[] args) {
+		
+		
+		String[] ranks = {"A", "B", "C"}; 
+		String[] suits =  {"Giraffes", "Lions"};
+		int values[] = {2,1,6};
+		for (int x = 0; x < suits.length; x++ ){
+			for (int y = 0; y < ranks.length; y++){	
+				System.out.println(ranks[y] +","+ suits[x]+","+ values[y]); 
+
+			}			
+			
+			
+		}
+			}
+}
