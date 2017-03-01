@@ -18,6 +18,13 @@
 	</section>
 	<section name="NewWizardAction">
 	</section>
+	<section name="InstallationDialogSettings">
+		<item value="934" key="DIALOG_WIDTH"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		<item value="982" key="DIALOG_HEIGHT"/>
+		<item value="742" key="DIALOG_X_ORIGIN"/>
+		<item value="11" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="ImportExportAction">
 		<item value="org.eclipse.ui.wizards.import.FileSystem" key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID"/>
 		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
@@ -28,6 +35,10 @@
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID"/>
 		<item value="false" key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID"/>
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\anish\Downloads\Case Study"/>
+			<item value="C:\Users\anish\Downloads\21-3a-petshop"/>
+			<item value="C:\Users\anish\Downloads\Activity4  Starter Code"/>
+			<item value="C:\Users\anish\Downloads\Activity3 Starter Code"/>
 			<item value="C:\Users\anish\Downloads\Activity2  Starter Code"/>
 			<item value="C:\Users\anish\Downloads\Activity1 Starter Code"/>
 			<item value="C:\Users\anish\Downloads\activity5"/>

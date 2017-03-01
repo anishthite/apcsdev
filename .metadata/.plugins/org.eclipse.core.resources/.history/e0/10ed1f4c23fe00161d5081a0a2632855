@@ -1,0 +1,20 @@
+import java.util.*;
+import java.lang.Math;
+import java.util.Random;
+public class sandpit {
+   public static String mystr;
+  	
+	public static void main(String[] args) {
+		
+	
+
+		
+	}
+	public static int sum(ArrayList<Integer> list){
+		int sum = 0;
+		for (int j = 0; j <list.size(); j++){
+		sum += list.get(j);
+		}
+		return sum;
+	}
+}
