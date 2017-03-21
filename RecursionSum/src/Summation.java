@@ -41,7 +41,8 @@ private static int sum(int a, int b){
 		return x;
 	}
 	else {
-		int x = a + sum(b-1, b );
+		//int x = a + sum(b-1, b );
+		int x = b + sum(a, b-1 );
 		System.out.println("Result in call: " + x);
 		return x;
 		
