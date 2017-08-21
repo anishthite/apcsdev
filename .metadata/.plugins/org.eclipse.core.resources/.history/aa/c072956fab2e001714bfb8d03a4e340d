@@ -1,0 +1,30 @@
+import java.util.*;
+import java.lang.Math;
+import java.lang.reflect.Array;
+import java.util.Random;
+public class sandpit {
+   public static String mystr;
+  	
+	public static void main(String[] args) {
+		//System.out.print(3/2%2+45-(6*7));
+		int[] arr = {1,2,3,4};
+		int[] arrtemp = new int[arr.length];
+		int j = arr.length-1;
+		for (int i = 0; i <arr.length; i++){
+			arrtemp[j] = arr[i];
+			j--;	
+		}
+		arr = arrtemp;
+		for (int i : arr){
+			
+			System.out.print(i);
+		}
+	}
+	public static int sum(ArrayList<Integer> list){
+		int sum = 0;
+		for (int j = 0; j <list.size(); j++){
+		sum += list.get(j);
+		}
+		return sum;
+	}
+}

@@ -1,13 +1,19 @@
+/*
+ Anish Thite
+ 3/20/2017
+ Notre Dame High School
+ */
+// import necessary classes
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
 import java.util.*;
+import java.lang.*;
 
-
-
-public class Test {
+@SuppressWarnings("rawtypes")
+public class Test implements Comparable{
 
 	
 	      private static FileInputStream inFile;
@@ -39,7 +45,7 @@ public class Test {
 
 			  
 			  {
-			    inFile = new FileInputStream ("c:\\!!VHSAPCSData\\truefalse.txt");
+			    inFile = new FileInputStream ("c:\\APCS.dev\\APCSData\\truefalse.txt");
 			    inReader = new InputStreamReader(inFile);
 			    reader = new BufferedReader(inReader);
 			    
@@ -97,11 +103,41 @@ public class Test {
 				  
 				  //Implementation of code here.
 				  
-				  
+				  int k = 0;
+				  boolean exchangeMade = true;
+				  while ((k < classroom.size() -1) && exchangeMade){
+					  exchangeMade = false;
+					  k++;
+				int x = classroom.size() - k;
+				  for (int j = 0; j < x; j++){
+					  if (classroom.get(j).getScore() > classroom.get(j+1).getScore())
+						  swap(classroom,j,j+1);
+				  }
+					exchangeMade = true;
+				  }
 			  }
+			    
+			    
+			    public static int findMinimum(List<Student> classroom2, int first){
+			    	
+					int minIndex = first;
+					for (int i = first + 1; i < classroom2.size(); i++){
+						if (((Comparable)classroom2.get(i)).compareTo(classroom2.get(minIndex)) < 0){
+							minIndex = i;
+						}
+					}
+					return minIndex;
+					
+			    }
+			    
+			    public static void swap(List<Student> classroom2,  int x, int y){
+			    	
+			    	Student temp = classroom2.get(x);
+					classroom2.set(x, classroom2.get(y));
+					classroom2.set(y, temp);
 
-
-				  
+			    }
+			    			  
 	  }
 
 
